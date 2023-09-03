@@ -1,4 +1,4 @@
-class Chronometer {
+/*class Chronometer {
   constructor() {
     this.currentTime = 0;
     this.intervalId = null;
@@ -10,10 +10,8 @@ class Chronometer {
         let counter = 0;
         this.intervalId = setInterval(() => {
           counter++;
-          this.currentTime = counter;
-          if (this.currentTime === 3) {
-            clearInterval(this.intervalId);
-          }
+          this.currentTime += 1;
+         
           if (typeof printTimeCallback === 'function') {
             printTimeCallback(this.currentTime);
           }
@@ -61,4 +59,48 @@ class Chronometer {
     return `${minutes}:${seconds}`;
   }
     // ... your code goes here
+  }*/
+
+class Chronometer {
+  constructor() {
+    this.currentTime = 0
+    this.intervalId = null
   }
+
+  start(printTimeCallback) {
+    this.intervalId = setInterval(() => {
+      this.currentTime += 1
+
+      if (typeof printTimeCallback === 'function') {
+        printTimeCallback(this.currentTime)
+      }
+    }, 1000)
+  }
+
+  getMinutes() {
+    return Math.floor(this.currentTime / 60)
+  }
+
+  getSeconds() {
+    return this.currentTime % 60
+  }
+
+  computeTwoDigitNumber(value) {
+    return ('0' + value).slice(-2)
+  }
+
+  stop() {
+    clearInterval(this.intervalId)
+  }
+
+  reset() {
+    this.currentTime = 0
+  }
+
+  split() {
+    let minutes = this.computeTwoDigitNumber(this.getMinutes())
+    let seconds = this.computeTwoDigitNumber(this.getSeconds())
+
+    return `${minutes}:${seconds}`
+  }
+}

@@ -8,25 +8,30 @@ body {
   font-size: 80px;
   font-weight: bold;
   padding: 40px 0;
+  background-color: rgb(28, 93, 233);
 }
-
 #clock {
-  border: 2px solid #000;
+  border: 2px solid black;
+  background-color: rgb(25, 37, 37);
   border-radius: 20px;
   box-sizing: border-box;
-  height: 250px;
+  height: 280px;
   margin: 0 auto;
   padding: 18px 0;
   width: 245px;
 }
 
 #sphere {
-  border: 2px solid #000;
+  border: 2px solid black;
+  background-image: url(../jeremy-bishop-_CFv3bntQlQ-unsplash.jpg);
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
   border-radius: 20px;
   box-sizing: border-box;
   font-family: "Digi";
   font-size: 80px;
-  height: 210px;
+  height: 240px;
   margin: 0 auto;
   padding: 35px 0;
   position: relative;
@@ -54,8 +59,10 @@ body {
 }
 
 .leash {
-  background: rgb(204, 84, 87);
-  border: 2px solid rgb(134, 59, 61);
+  background:black;
+  
+
+  
   height: 50px;
   margin: 0 auto;
   width: 120px;
@@ -87,18 +94,25 @@ body {
 .number {
   display: inline-block;
   width: 40px;
-}
+  color: black;
+  opacity: 0.7;
 
+}
+span{
+  color: black;
+  opacity: 0.7 ;
+
+}
 .btn {
   border: 0;
   border-radius: 100%;
   bottom: 10px;
   color: #fff;
   cursor: pointer;
-  height: 50px;
+  height: 60px;
   outline: 0;
   position: absolute;
-  width: 50px;
+  width: 60px;
 }
 
 .btn.start,
